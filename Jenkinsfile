@@ -4,8 +4,12 @@ pipeline {
     stages {
        
         stage('Build') {
+            
             steps {
-                sh 'echo "Building the application..."'
+                sh 'echo "Building the application to exec..."'
+                sh 'chmod +x ./scripts/build.sh'
+                sh './scripts/build.sh main.py'
+                
             }
         }
         stage('Test') {
